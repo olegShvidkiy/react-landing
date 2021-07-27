@@ -1,0 +1,185 @@
+.input {
+  display: none;
+}
+
+.wrapper {
+  position: relative;
+  div {
+    padding: 0;
+  }
+}
+
+.bubble {
+  position: absolute;
+  display: block;
+  font-size: 13px;
+  background-color: #fff;
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  transition: 0.5s;
+  &:hover {
+    background: #f6f9ff;
+    border: 1.5px solid #7aa1f7;
+  }
+  &_1 {
+    width: 121px;
+    height: 121px;
+    top: 0;
+    left: 0;
+    animation: one 1s;
+  }
+  &_2 {
+    width: 79px;
+    height: 79px;
+    top: 1.5rem;
+    left: 9.5rem;
+    animation: two 0.5s;
+  }
+  &_3 {
+    width: 85px;
+    height: 85px;
+    top: 5rem;
+    left: 14.5rem;
+    animation: three 1.5s;
+  }
+  &_4 {
+    width: 98px;
+    height: 98px;
+    top: 7rem;
+    left: 6.5rem;
+    animation: four 2s;
+  }
+  &_5 {
+    width: 106px;
+    height: 106px;
+    top: 9.5rem;
+    left: -0.3rem;
+    animation: five 1.5s;
+    // padding-left: 20px;
+  }
+  &_6 {
+    width: 86px;
+    height: 86px;
+    top: 17rem;
+    left: 0.5rem;
+    animation: six 1s;
+  }
+  &_7 {
+    width: 100px;
+    height: 100px;
+    top: 14rem;
+    left: 6.5rem;
+    animation: seven 1.5s;
+  }
+  &_8 {
+    width: 100px;
+    height: 100px;
+    top: 11rem;
+    left: 13rem;
+    animation: eight 1s;
+  }
+}
+
+@keyframes one {
+  0% {
+    left: -5rem;
+    top: -1rem;
+  }
+
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+
+@keyframes two {
+  0% {
+    top: 1.5rem;
+    left: 19rem;
+  }
+
+  100% {
+    top: 1.5rem;
+    left: 9.5rem;
+  }
+}
+
+@keyframes three {
+  0% {
+    top: 5rem;
+    left: 19.5rem;
+  }
+
+  100% {
+    top: 5rem;
+    left: 14.5rem;
+  }
+}
+
+@keyframes four {
+  0% {
+    left: -5rem;
+    top: -1rem;
+  }
+
+  100% {
+    top: 7rem;
+    left: 6.5rem;
+  }
+}
+
+@keyframes five {
+  0% {
+    left: -5rem;
+    top: -1rem;
+  }
+
+  100% {
+    top: 9.5rem;
+    left: -0.3rem;
+  }
+}
+@keyframes six {
+  0% {
+    left: -5rem;
+    top: -4rem;
+  }
+
+  100% {
+    top: 17rem;
+    left: 0.5rem;
+  }
+}
+@keyframes seven {
+  0% {
+    top: 13rem;
+    left: 13rem;
+  }
+
+  100% {
+    top: 14rem;
+    left: 6.5rem;
+  }
+}
+@keyframes eight {
+  0% {
+    top: 12rem;
+    left: 10rem;
+  }
+
+  100% {
+    top: 11rem;
+    left: 13rem;
+  }
+}
+.input:checked {
+  + .bubble {
+    background: #f1f6ff;
+    border: 1.5px solid #4380ff;
+  }
+}
