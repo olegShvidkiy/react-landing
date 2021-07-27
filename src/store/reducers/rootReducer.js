@@ -15,6 +15,7 @@ const persistConfig = {
 
 const initialState = {
   currentQuiz: 0,
+
   quizList: [
     {
       type: "checklist",
@@ -178,12 +179,7 @@ const rootReducer = (state = initialState, action) => {
     case SET_CHECKLIST:
       buff = state.quizList;
       buff[state.currentQuiz].options = action.payload;
-      return {
-        ...state,
-        currentQuiz: state.currentQuiz + 1,
-        quizList: buff,
-        lol: 228,
-      };
+      return { ...state, currentQuiz: state.currentQuiz + 1, quizList: buff };
     case SET_ONEANSWER:
       buff = state.quizList;
       buff[state.currentQuiz].selected = action.payload;
