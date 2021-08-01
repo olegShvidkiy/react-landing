@@ -1,12 +1,16 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory, useParams } from "react-router";
 import { toPrev } from "../../../store/actions/actions";
 import cls from "./progressBar.module.scss";
 export function ProgressBar({ currentQuiz, total }) {
-  console.log(currentQuiz, total);
   const width = (currentQuiz * 100) / total;
   const dispatch = useDispatch();
+  const history = useHistory();
+
   const toPreviousStep = () => {
     dispatch(toPrev());
+
+    currentQuiz != 1 && history.push(`/quiz/${currentQuiz - 2}`);
   };
   return (
     <div className={cls.wrapper}>
@@ -26,7 +30,7 @@ export function ProgressBar({ currentQuiz, total }) {
               >
                 <path
                   d="M8 15L1 8L8 1"
-                  stroke="#70748e"
+                  stroke="#2E323F"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"

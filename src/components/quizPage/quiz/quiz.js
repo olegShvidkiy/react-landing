@@ -6,15 +6,23 @@ import { Button } from "../../UI/button/button";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setBubbleQuiz, setChecklist } from "../../../store/actions/actions";
+import { Link, useHistory, useParams } from "react-router-dom";
 
-export function Quiz({ quiz }) {
+export function Quiz() {
+  const { quizList } = useSelector((state) => state);
+  const { id } = useParams();
+  const quiz = quizList[id];
   const payload = useRef(quiz.options);
   const dispatch = useDispatch();
-  const { currentQuiz } = useSelector((state) => state);
+  const history = useHistory();
+
   const [disableButton, setDisableButton] = useState(
     payload.current.find((item) => item.selected) ? false : true
   );
-  console.log("render");
+
+  // useEffect(() => {
+  //   history.push("/quiz/" + id);
+  // }, [id]);
 
   useEffect(() => {
     if (quiz.title != payload.title && quiz.withButton) {
@@ -59,6 +67,8 @@ export function Quiz({ quiz }) {
     } else if (quiz.type === "bubbleQuiz") {
       dispatch(setBubbleQuiz(payload.current));
     }
+
+    id != 4 && history.push(`/quiz/${+id + 1}`);
   }
 
   return (
@@ -69,11 +79,22 @@ export function Quiz({ quiz }) {
         <div>{type}</div>
         {quiz.withButton && (
           <div className={cls.btn_wrapper}>
-            <Button
-              disabled={disableButton}
-              text={"Next"}
-              onClick={() => changeStore()}
-            />
+            {id != 4 ? (
+              <Button
+                disabled={disableButton}
+                text={"Next"}
+                onClick={() => changeStore()}
+              />
+            ) : (
+              <Link to="/landing">
+                <Button
+                  disabled={disableButton}
+                  text={"Next"}
+                  onClick={() => changeStore()}
+                />
+                <div className={cls.skip}>Skip</div>
+              </Link>
+            )}
           </div>
         )}
       </div>

@@ -14,7 +14,7 @@
   }
   &_block {
     width: 100%;
-
+    color: #222427;
     background-color: white;
     margin-top: 20px;
 
@@ -22,15 +22,27 @@
     box-shadow: 0px 4px 30px rgba(59, 59, 68, 0.05);
   }
   &_inner {
-    padding: 25px 0 25px 0;
+    padding: 25px 0 0px 0;
     position: relative;
 
+    .superpuperwrapper {
+      position: relative;
+      width: 300px;
+      margin: 0 auto;
+    }
     .chartImg {
+      position: absolute;
+
       width: 100%;
 
       &_wrapper {
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
 
+        height: 150px;
         // &::after {
         //   content: "34%";
         //   position: absolute;
@@ -73,9 +85,9 @@
   .start {
     &1 {
       position: absolute;
-      bottom: 26%;
+      bottom: 60px;
       padding-bottom: 7px;
-      left: 7%;
+      left: -10px;
       font-weight: 600;
       font-size: 18px;
       line-height: 130%;
@@ -99,9 +111,9 @@
 
     &2 {
       position: absolute;
-      bottom: 42%;
+      bottom: 125px;
       padding-bottom: 7px;
-      left: 6%;
+      left: -10px;
       font-weight: 600;
       font-size: 18px;
       line-height: 130%;
@@ -126,8 +138,8 @@
   .end {
     &1 {
       position: absolute;
-      bottom: 63%;
-      right: 2.5%;
+      top: -25px;
+      right: -20px;
       padding-bottom: 7px;
       font-weight: 600;
       font-size: 18px;
@@ -151,8 +163,8 @@
     }
     &2 {
       position: absolute;
-      bottom: 18%;
-      right: 4%;
+      bottom: 66px;
+      right: -20px;
       padding-bottom: 7px;
       font-weight: 600;
       font-size: 18px;

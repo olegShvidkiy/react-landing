@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+
 import cls from "./specialOffer.module.scss";
 export function SpecialOffer() {
   const [time, setTime] = useState(120);

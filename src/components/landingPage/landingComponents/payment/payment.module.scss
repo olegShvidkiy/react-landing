@@ -11,6 +11,7 @@
     margin-bottom: 4vh;
   }
   .block {
+    color: #222427;
     width: 100%;
     background: #ffeaba;
     border-radius: 14px;
@@ -20,6 +21,7 @@
     height: 20vh;
   }
   .text {
+    color: #222427;
     width: 60%;
     padding: 2vh;
     font-weight: 500;
@@ -51,6 +53,7 @@
       position: absolute;
     }
     .text_bonus {
+      color: #222427;
       display: block;
       padding-left: 10%;
     }
@@ -67,9 +70,10 @@
     position: relative;
   }
   .discount {
+    transform: matrix(1, 0, 0.01, 1, 0, 0);
     font-size: 18px;
     line-height: 27px;
-
+    opacity: 0.7;
     display: flex;
     align-items: center;
     text-align: center;

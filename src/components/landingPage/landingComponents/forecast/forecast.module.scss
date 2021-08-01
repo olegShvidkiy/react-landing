@@ -30,6 +30,7 @@
     flex-direction: column;
     position: relative;
     div {
+      color: #222427;
       text-align: center;
       display: table-cell;
       vertical-align: top;
@@ -58,6 +59,7 @@
       background-color: white;
       border-radius: 14px;
       &_inner {
+        color: #222427;
         padding: 15px;
       }
     }

@@ -6,7 +6,7 @@ import {
 } from "../types/types";
 
 import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import storage from "redux-persist/lib/storage/session";
 
 const persistConfig = {
   key: "root",
@@ -15,7 +15,9 @@ const persistConfig = {
 
 const initialState = {
   currentQuiz: 0,
-
+  test: {
+    lol: 0,
+  },
   quizList: [
     {
       type: "checklist",
@@ -98,32 +100,16 @@ const initialState = {
       withEmoji: false,
       options: [
         {
-          text: (
-            <div style={{ padding: "0px" }}>
-              <i style={{ color: "#4380ff" }}>5 min /</i> day
-            </div>
-          ),
+          text: "5 min / ",
         },
         {
-          text: (
-            <div style={{ padding: "0px" }}>
-              <i style={{ color: "#4380ff" }}>10 min /</i> day
-            </div>
-          ),
+          text: "10 min / ",
         },
         {
-          text: (
-            <div style={{ padding: "0px" }}>
-              <i style={{ color: "#4380ff" }}>15 min /</i> day
-            </div>
-          ),
+          text: "15 min / ",
         },
         {
-          text: (
-            <div style={{ padding: "0px" }}>
-              <i style={{ color: "#4380ff" }}>20+ min /</i> day
-            </div>
-          ),
+          text: "20+  min / ",
         },
       ],
       selected: null,
@@ -175,19 +161,24 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   let buff;
+  let testbuff;
   switch (action.type) {
     case SET_CHECKLIST:
-      buff = state.quizList;
+      buff = JSON.parse(JSON.stringify(state.quizList));
       buff[state.currentQuiz].options = action.payload;
-      return { ...state, currentQuiz: state.currentQuiz + 1, quizList: buff };
+      return {
+        ...state,
+        currentQuiz: state.currentQuiz + 1,
+        quizList: buff,
+      };
     case SET_ONEANSWER:
-      buff = state.quizList;
+      buff = JSON.parse(JSON.stringify(state.quizList));
       buff[state.currentQuiz].selected = action.payload;
       return { ...state, currentQuiz: state.currentQuiz + 1, quizList: buff };
     case SET_BUBBLEQUIZ:
-      buff = state.quizList;
+      buff = JSON.parse(JSON.stringify(state.quizList));
       buff[state.currentQuiz].options = action.payload;
-      return { ...state, currentQuiz: state.currentQuiz + 1, quizList: buff };
+      return { ...state, quizList: buff };
     case TO_PREV:
       return { ...state, currentQuiz: state.currentQuiz - 1 };
     default:

@@ -19,7 +19,8 @@ export function HowWasCreated() {
           <div className={cls.circle}>2</div>
         </div>
         <div className={cls.block}>
-          99% of content meets what you chose in the quiz
+          <i style={{ color: "#4380FF" }}>99% of content</i> meets what you
+          chose in the quiz
           <div className={cls.circle}>3</div>
         </div>
       </div>

@@ -9,7 +9,12 @@ import { PersonalizedPlan } from "./landingComponents/personalizedPlan/personali
 import { SpecialOffer } from "./landingComponents/specialOffer/specialOffer";
 import { Link } from "react-scroll";
 import cls from "./landingPage.module.scss";
+import { Redirect } from "react-router";
+import { useSelector } from "react-redux";
+import { Fragment } from "react";
+
 export function LandingPage() {
+  const state = useSelector((state) => state);
   return (
     <div className={cls.lending}>
       <div className={cls.page}>

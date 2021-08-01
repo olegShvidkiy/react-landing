@@ -14,12 +14,14 @@ export function Charts() {
               <img src="/images/landing/chart_emoji_1.png" alt="emoji"></img>
             </div>
           </div>
-          <div className={cls.chartImg_wrapper}>
-            <img
-              className={cls.chartImg}
-              src="/images/landing/chart_1.png"
-              alt="chart"
-            ></img>
+          <div className={cls.superpuperwrapper}>
+            <div className={cls.chartImg_wrapper}>
+              <img
+                className={cls.chartImg}
+                src="/images/landing/chart_1.png"
+                alt="chart"
+              ></img>
+            </div>
             <div className={cls.start1}>34%</div>
             <div className={cls.end1}>98%</div>
           </div>
@@ -33,12 +35,14 @@ export function Charts() {
               <img src="/images/landing/chart_emoji_2.png" alt="emoji"></img>
             </div>
           </div>
-          <div className={cls.chartImg_wrapper}>
-            <img
-              className={cls.chartImg}
-              src="/images/landing/chart_2.png"
-              alt="chart"
-            ></img>
+          <div className={cls.superpuperwrapper}>
+            <div className={cls.chartImg_wrapper}>
+              <img
+                className={cls.chartImg}
+                src="/images/landing/chart_2.png"
+                alt="chart"
+              ></img>{" "}
+            </div>
             <div className={cls.start2}>65%</div>
             <div className={cls.end2}>10%</div>
           </div>

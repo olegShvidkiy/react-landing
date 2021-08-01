@@ -44,6 +44,7 @@ export function Forecast() {
             textAlign: "center",
             fontSize: "18px",
             paddingBottom: "15px",
+            color: "#222427",
           }}
         >
           Super powerful habits <i style={{ color: "#4380FF" }}>In 7 days</i>,
@@ -62,7 +63,9 @@ export function Forecast() {
         <div className={cls.block}>
           <div className={cls.block_inner}>
             <div>Timing goal</div>
-            <h4>{timingGoal.text}</h4>
+            <h4>
+              <i style={{ color: "#4380FF" }}>{timingGoal.text}</i>day
+            </h4>
           </div>
         </div>
       </div>

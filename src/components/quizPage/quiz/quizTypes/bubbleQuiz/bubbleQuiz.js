@@ -11,7 +11,6 @@ export function BubbleQuiz({ options, getData }) {
     getData(answers);
   }
 
-  console.log(Object.keys(cls).filter((item) => item.indexOf("bubble") > -1));
   const bubbles = Object.keys(cls)
     .filter((item) => item.indexOf("bubble_") > -1)
     .map((item, i) => (
@@ -20,6 +19,7 @@ export function BubbleQuiz({ options, getData }) {
           onChange={() => onChange(i)}
           className={cls.input}
           type="checkbox"
+          checked={options[i].selected}
           id={i}
         ></input>
         <label className={cls.bubble + " " + cls[item]} htmlFor={i}>

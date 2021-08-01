@@ -12,7 +12,9 @@ export function Option({ src, text, id, onChange, selected }) {
 
       <label className={cls.label} htmlFor={id}>
         <div className={cls.emojiText}>
-          <img className={cls.img} src={src} alt="emoji"></img>
+          <div className={cls.img_wrapper}>
+            <img className={cls.img} src={src} alt="emoji"></img>
+          </div>
           <div>{text}</div>
         </div>
       </label>

@@ -13,6 +13,9 @@
   padding: 20px;
 }
 
+.wrapper > * {
+  padding-top: 0 !important;
+}
 .wrapper:hover {
   background: #fdfeff;
   border: 1px solid #4380ff;

@@ -3,8 +3,39 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  transition: 1s;
 }
 
+.page {
+  position: relative;
+  height: 100%;
+}
+.enter {
+  opacity: 0;
+}
+.enterActive {
+  opacity: 1;
+  transition: opacity 500ms linear 300ms;
+}
+.exit {
+  opacity: 1;
+}
+.exitActive {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+.animation {
+  animation: enter 2s;
+  /* opacity: 0.5; */
+}
+@keyframes enter {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .entered {
   flex-grow: 3;
 }

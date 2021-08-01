@@ -1,6 +1,8 @@
 .quiz {
-  position: relative;
+  position: absolute;
   width: 85%;
+  left: 7.5%;
+  height: 100%;
   margin: 0 auto;
   flex-grow: 3;
   transition: 1s;
@@ -9,10 +11,7 @@
   * {
     padding-top: 0.8rem;
   }
-  div {
-    transition: 1s;
-    animation: enter 2s;
-  }
+
   &_title {
     padding-right: 15%;
     font-size: 24px;
@@ -23,6 +22,16 @@
     padding-right: 14%;
   }
 }
+.skip {
+  text-align: center;
+  font-size: 15px;
+  line-height: 22px;
+
+  color: #222427;
+
+  opacity: 0.4;
+  text-decoration: none;
+}
 
 @keyframes enter {
   0% {
@@ -32,7 +41,9 @@
     opacity: 1;
   }
 }
-
+.animation {
+  animation: enter 2s;
+}
 .btn_wrapper {
   width: 100%;
   padding-top: 0;
