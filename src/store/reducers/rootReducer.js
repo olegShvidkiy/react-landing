@@ -1,9 +1,4 @@
-import {
-  SET_BUBBLEQUIZ,
-  SET_CHECKLIST,
-  SET_ONEANSWER,
-  TO_PREV,
-} from "../types/types";
+import { SET_BUBBLEQUIZ, SET_CHECKLIST, SET_ONEANSWER } from "../types/types";
 
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage/session";
@@ -14,10 +9,6 @@ const persistConfig = {
 };
 
 const initialState = {
-  currentQuiz: 0,
-  test: {
-    lol: 0,
-  },
   quizList: [
     {
       type: "checklist",
@@ -27,37 +18,37 @@ const initialState = {
       text: "Let's make your checklist plan. Opt for your goals to get excited:",
       options: [
         {
-          src: "/images/1.1.png",
+          src: "/test-project/images/1.1.png",
           text: "Perform cleaning",
           selected: false,
         },
         {
-          src: "/images/1.2.png",
+          src: "/test-project/images/1.2.png",
           text: "Keep mental health",
           selected: false,
         },
         {
-          src: "/images/1.3.png",
+          src: "/test-project/images/1.3.png",
           text: "Be productive",
           selected: false,
         },
         {
-          src: "/images/1.4.png",
+          src: "/test-project/images/1.4.png",
           text: "Set useful nutrition ",
           selected: false,
         },
         {
-          src: "/images/1.5.png",
+          src: "/test-project/images/1.5.png",
           text: "Love & be loved",
           selected: false,
         },
         {
-          src: "/images/1.6.png",
+          src: "/test-project/images/1.6.png",
           text: "Have a healthy body",
           selected: false,
         },
         {
-          src: "/images/1.7.png",
+          src: "/test-project/images/1.7.png",
           text: "Bring self-care into life",
           selected: false,
         },
@@ -85,10 +76,10 @@ const initialState = {
       withButton: false,
       withEmoji: true,
       options: [
-        { src: "/images/2.1.png", text: "More focus" },
-        { src: "/images/2.2.png", text: "More strength" },
-        { src: "/images/2.3.png", text: "More calm" },
-        { src: "/images/2.4.png", text: "More energy" },
+        { src: "/test-project/images/2.1.png", text: "More focus" },
+        { src: "/test-project/images/2.2.png", text: "More strength" },
+        { src: "/test-project/images/2.3.png", text: "More calm" },
+        { src: "/test-project/images/2.4.png", text: "More energy" },
       ],
       selected: null,
     },
@@ -160,27 +151,39 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
-  let buff;
-  let testbuff;
   switch (action.type) {
     case SET_CHECKLIST:
-      buff = JSON.parse(JSON.stringify(state.quizList));
-      buff[state.currentQuiz].options = action.payload;
       return {
         ...state,
-        currentQuiz: state.currentQuiz + 1,
-        quizList: buff,
+        quizList: state.quizList.map((item, i) => {
+          if (i == action.payload.id) {
+            return { ...item, options: action.payload.answer };
+          }
+          return item;
+        }),
       };
+
     case SET_ONEANSWER:
-      buff = JSON.parse(JSON.stringify(state.quizList));
-      buff[state.currentQuiz].selected = action.payload;
-      return { ...state, currentQuiz: state.currentQuiz + 1, quizList: buff };
+      return {
+        ...state,
+        quizList: state.quizList.map((item, i) => {
+          if (i == action.payload.id) {
+            return { ...item, selected: action.payload.answer };
+          }
+          return item;
+        }),
+      };
     case SET_BUBBLEQUIZ:
-      buff = JSON.parse(JSON.stringify(state.quizList));
-      buff[state.currentQuiz].options = action.payload;
-      return { ...state, quizList: buff };
-    case TO_PREV:
-      return { ...state, currentQuiz: state.currentQuiz - 1 };
+      return {
+        ...state,
+        quizList: state.quizList.map((item, i) => {
+          if (i == action.payload.id) {
+            return { ...item, options: action.payload.answer };
+          }
+          return item;
+        }),
+      };
+
     default:
       return state;
   }

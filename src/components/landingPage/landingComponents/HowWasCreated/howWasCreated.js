@@ -9,7 +9,10 @@ export function HowWasCreated() {
       <div className={cls.blocks}>
         <div className={cls.block}>
           <div className={cls.img_wrapper}>
-            <img src="/images/landing/companies.png" alt="logo"></img>
+            <img
+              src="/test-project/images/landing/companies.png"
+              alt="logo"
+            ></img>
           </div>
           More than 1500 books and articles analyzed to choose the best
           <div className={cls.circle}>1</div>

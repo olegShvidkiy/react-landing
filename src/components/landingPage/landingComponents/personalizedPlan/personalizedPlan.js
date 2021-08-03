@@ -8,7 +8,7 @@ export function PersonalizedPlan() {
         <i style={{ color: "#4380FF" }}>will teach you</i>
       </div>
       <div className={cls.block}>
-        <img src="./images/landing/pers_plan.png" alt="plan"></img>
+        <img src="/test-project/images/landing/pers_plan.png" alt="plan"></img>
         <div className={cls.text}>
           Build a habit system to get a better result
         </div>

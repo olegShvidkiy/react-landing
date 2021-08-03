@@ -11,14 +11,17 @@ export function Charts() {
           <div className={cls.chart_title}>
             Multi-tasking skill
             <div className={cls.chart_emoji}>
-              <img src="/images/landing/chart_emoji_1.png" alt="emoji"></img>
+              <img
+                src="/test-project/images/landing/chart_emoji_1.png"
+                alt="emoji"
+              ></img>
             </div>
           </div>
           <div className={cls.superpuperwrapper}>
             <div className={cls.chartImg_wrapper}>
               <img
                 className={cls.chartImg}
-                src="/images/landing/chart_1.png"
+                src="/test-project/images/landing/chart_1.png"
                 alt="chart"
               ></img>
             </div>
@@ -32,14 +35,17 @@ export function Charts() {
           <div className={cls.chart_title}>
             Procrastination level
             <div className={cls.chart_emoji}>
-              <img src="/images/landing/chart_emoji_2.png" alt="emoji"></img>
+              <img
+                src="/test-project/images/landing/chart_emoji_2.png"
+                alt="emoji"
+              ></img>
             </div>
           </div>
           <div className={cls.superpuperwrapper}>
             <div className={cls.chartImg_wrapper}>
               <img
                 className={cls.chartImg}
-                src="/images/landing/chart_2.png"
+                src="/test-project/images/landing/chart_2.png"
                 alt="chart"
               ></img>{" "}
             </div>

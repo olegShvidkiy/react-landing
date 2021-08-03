@@ -1,22 +1,13 @@
-import {
-  SET_BUBBLEQUIZ,
-  SET_CHECKLIST,
-  SET_ONEANSWER,
-  TO_PREV,
-} from "../types/types";
+import { SET_BUBBLEQUIZ, SET_CHECKLIST, SET_ONEANSWER } from "../types/types";
 
-export function setChecklist(answers) {
-  return { type: SET_CHECKLIST, payload: answers };
+export function setChecklist(answer, id) {
+  return { type: SET_CHECKLIST, payload: { answer, id } };
 }
 
-export function setOneAnswer(answer) {
-  return { type: SET_ONEANSWER, payload: answer };
+export function setOneAnswer(answer, id) {
+  return { type: SET_ONEANSWER, payload: { answer, id } };
 }
 
-export function setBubbleQuiz(answers) {
-  return { type: SET_BUBBLEQUIZ, payload: answers };
-}
-
-export function toPrev() {
-  return { type: TO_PREV };
+export function setBubbleQuiz(answer, id) {
+  return { type: SET_BUBBLEQUIZ, payload: { answer, id } };
 }

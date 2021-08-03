@@ -8,7 +8,7 @@ export default function QuizOption({ withEmoji, option, i }) {
   const { id } = useParams();
   const history = useHistory();
   function changeStore() {
-    dispatch(setOneAnswer(i));
+    dispatch(setOneAnswer(i, id));
 
     id != 4 && history.push(`/quiz/${+id + 1}`);
   }

@@ -6,7 +6,10 @@ export function Payment() {
       <div className={cls.title}>What’s inside:</div>
       <div className={cls.block}>
         <div className={cls.image_wrapper}>
-          <img src="/images/landing/payment_1.png" alt={"xz"}></img>
+          <img
+            src="/test-project/images/landing/payment_1.png"
+            alt={"xz"}
+          ></img>
         </div>
         <div className={cls.text}>
           Personalized plan on habits transformation: tools & strategies
@@ -14,7 +17,10 @@ export function Payment() {
       </div>
       <div className={cls.block}>
         <div className={cls.image_wrapper}>
-          <img src="/images/landing/payment_2.png" alt={"xz"}></img>
+          <img
+            src="/test-project/images/landing/payment_2.png"
+            alt={"xz"}
+          ></img>
         </div>
         <div className={cls.text}>
           Habit tracker with challenges set for topics you choose
@@ -25,18 +31,18 @@ export function Payment() {
       </h3>
       <div className={cls.bonus}>
         <div>
-          <img src="/images/landing/star.png" alt="star"></img>
+          <img src="/test-project/images/landing/star.png" alt="star"></img>
           <div className={cls.text_bonus}> The habits cheat sheet</div>
         </div>
         <div>
-          <img src="/images/landing/star.png" alt="star"></img>
+          <img src="/test-project/images/landing/star.png" alt="star"></img>
           <div className={cls.text_bonus}>
             <i style={{ fontWeight: "800" }}> Bonus guide: </i>how to apply
             habits to career
           </div>
         </div>
         <div>
-          <img src="/images/landing/star.png" alt="star"></img>
+          <img src="/test-project/images/landing/star.png" alt="star"></img>
           <div className={cls.text_bonus}>
             <i style={{ fontWeight: "800" }}> Bonus guide:</i> how to apply
             habits to relationships

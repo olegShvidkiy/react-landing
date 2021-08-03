@@ -16,7 +16,7 @@ export function Footer() {
         Pay safe & secure
       </h5>
       <div className={cls.image_wrapper}>
-        <img src="/images/landing/Footer.png"></img>
+        <img src="/test-project/images/landing/Footer.png"></img>
       </div>
       <div className={cls.links}>
         <a>Contact Us</a>

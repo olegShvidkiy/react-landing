@@ -10,7 +10,7 @@ export function Peoples() {
       <div className={cls.image_wrapper}>
         <img
           className={cls.image}
-          src="/images/landing/peoples.png"
+          src="/test-project/images/landing/peoples.png"
           alt="portrets"
         ></img>
       </div>

@@ -16,13 +16,13 @@ export default function App() {
         {/* {state.currentQuiz > 4 && <Redirect to="/landing" />} */}
 
         <Switch>
-          <Route path="/quiz">
+          <Route path="/quiz/:id">
             <QuizPage />
           </Route>
           <Route path="/landing">
             <LandingPage />
           </Route>
-          <Redirect to="/quiz" />
+          <Redirect to="/quiz/0" />
         </Switch>
       </div>
     </Router>
